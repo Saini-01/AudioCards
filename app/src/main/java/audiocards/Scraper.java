@@ -32,16 +32,16 @@ public class Scraper {
         questions = terms.eachText();
     }
 
-    public void createAudio(){
+    public void createAudio() throws IOException {
         voice.allocate();
-        FileWriter writer = new FileWriter(file, true);
-        for(int  i = 0; i < questions.size(); i ++){
+        FileOutputStream outputStream = new FileOutputStream(file, true);
+        for (int i = 0; i < questions.size(); i++) {
             String q = questions.get(i);
             voice.speak(q);
-            writer.append(q);
+            voice.save(outputStream);
         }
-        voice.save(file);
         voice.deallocate();
-        writer.close();
+        outputStream.close();
     }
+    
 }
