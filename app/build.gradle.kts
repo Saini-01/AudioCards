@@ -22,6 +22,9 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:31.1-jre")
+    implementation 'org.jsoup:jsoup:1.15.4'
+    implementation 'com.sun.speech:jsapi:1.0'
+    implementation 'com.sun.speech.freetts:freetts-jsapi11:1.2.2'
 }
 
 application {
